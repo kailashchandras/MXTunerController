@@ -17,6 +17,9 @@ struct Segment {
     var value: CGFloat
     
     var img: UIImage
+    
+    var highImg: UIImage
+
 }
 
 class MXOverlayMoodView: UIView {
@@ -94,13 +97,25 @@ class MXOverlayMoodView: UIView {
             ctx?.strokePath();
             // update starting angle of the next segment to the ending angle of this segment
             startAngle = endAngle
-            let imageView1 = UIImageView(image: segment.img)
-            imageView1.frame = CGRect(x: corX - 15, y: corY - 15, width: 30, height: 30)
-            self.addSubview(imageView1)
-            imageView?.backgroundColor = UIColor.red
+            
+            let button  = UIButton(type: .custom)
+            button.setImage(segment.img, for: .normal)
+            button.setImage(segment.highImg, for: .highlighted)
+            button.setImage(segment.highImg, for: .selected)
+            
+            button.frame = CGRect(x: corX - 15, y: corY - 15, width: 30, height: 30)
+            self.addSubview(button)
+            
+//            let imageView1 = UIImageView(image: segment.img)
+//            imageView1.frame = CGRect(x: corX - 15, y: corY - 15, width: 30, height: 30)
+//            self.addSubview(imageView1)
+//            imageView?.backgroundColor = UIColor.red
+            
+           
             
         }
     }
 
+   
 
 }

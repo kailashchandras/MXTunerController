@@ -30,12 +30,13 @@ class CellItem: UICollectionViewCell {
         contentView.clipsToBounds = true
         contentView.layer.shouldRasterize = true
         contentView.layer.rasterizationScale = UIScreen.main.scale
-        contentView.clipsToBounds = true
+        //contentView.clipsToBounds = true
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView!.contentMode = .scaleAspectFill
+        //imageView!.contentMode = .scaleAspectFill
+         imageView!.contentMode = .scaleAspectFit;
     }
     
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes!) {
